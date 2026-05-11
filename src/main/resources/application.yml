@@ -1,0 +1,83 @@
+server:
+  port: 8084
+  servlet:
+    session:
+      timeout: 600s # 单位为秒
+
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+  datasource:
+    url: jdbc:mysql://${blog.db.host}:${blog.db.port}/blog?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: ${blog.db.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    # 指定邮件服务器地址
+    host: smtp.qq.com
+    # 登录账户
+    username: ${blog.email.username}
+    # 登录密码
+    password: ${blog.email.password}
+
+    # 端口
+    port: 465
+    # 默认编码
+    default-encoding: UTF-8
+    # 使用的协议
+    protocol: smtps
+    # 其他的属性
+    properties:
+      "mail.smtp.connectiontimeout": 5000
+      "mail.smtp.timeout": 3000
+      "mail.smtp.writetimeout": 5000
+      "mail.smtp.auth": true
+      "mail.smtp.starttls.enable": true
+      "mail.smtp.starttls.required": true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.bilibili.myblogbackend.dto
+
+#redis:
+#  # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
+#  database: 0
+#  # redis服务器地址（默认为localhost）
+#  host: ${blog.redis.host}
+##  host: redis
+#  # redis端口（默认为6379）
+#  port: 6380
+#  # redis访问密码（默认为空）
+#  #password: pwd123
+#  # redis连接超时时间（单位毫秒）
+#  timeout: 10000
+#  # redis连接池配置
+#  pool:
+#    # 最大可用连接数（默认为8，负数表示无限）
+#    max-active: 8
+#    # 最大空闲连接数（默认为8，负数表示无限）
+#    max-idle: 8
+#    # 最小空闲连接数（默认为0，该值只有为正数才有用）
+#    min-idle: 0
+#    # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
+#    max-wait: -1
+minio:
+  blog:
+    endpoint: ${blog.oss.endpoint}
+    accessKey: ${blog.oss.accessKey}
+    secretKey: ${blog.oss.secretKey}
+    bucketsName: ${blog.oss.bucketsName}
+    image: ${blog.oss.image}
+    video: ${blog.oss.video}
+
