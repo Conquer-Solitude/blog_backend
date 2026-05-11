@@ -1,0 +1,118 @@
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Java ###
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+### Spring Boot ###
+# 开发环境配置文件（包含数据库密码等敏感信息，不要上传）
+application-dev.yml
+application-local.yml
+application-test.yml
+application-prod.yml
+
+# 日志目录
+logs/
+log/
+
+### IDE ###
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+### OS ###
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.nfs*
+
+### Other ###
+# 本地临时文件
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# 上传文件目录（如果有本地文件上传功能）
+upload/
+uploads/
+static/upload/
+static/uploads/
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 测试报告
+test-output/
+surefire-reports/
+failsafe-reports/
