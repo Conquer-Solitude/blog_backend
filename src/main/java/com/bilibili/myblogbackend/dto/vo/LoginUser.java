@@ -1,14 +1,4 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.bilibili.myblogbackend.dto.CustomAuthtication
- *  com.bilibili.myblogbackend.dto.po.User
- *  com.bilibili.myblogbackend.dto.vo.LoginUser
- *  lombok.Generated
- *  org.springframework.security.core.GrantedAuthority
- *  org.springframework.security.core.userdetails.UserDetails
- */
+
 package com.bilibili.myblogbackend.dto.vo;
 
 import com.bilibili.myblogbackend.dto.CustomAuthtication;

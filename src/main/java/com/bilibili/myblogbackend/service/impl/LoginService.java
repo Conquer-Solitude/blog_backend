@@ -1,5 +1,6 @@
 package com.bilibili.myblogbackend.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.bilibili.myblogbackend.convertor.ClassConvertor;
 import com.bilibili.myblogbackend.dto.UserDto;

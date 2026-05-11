@@ -1,10 +1,4 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.bilibili.myblogbackend.dto.vo.CommentVO
- *  lombok.Generated
- */
+
 package com.bilibili.myblogbackend.dto.vo;
 
 import java.io.Serializable;
