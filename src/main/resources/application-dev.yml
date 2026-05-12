@@ -1,30 +1,10 @@
-
-server:
-  port: 8084
-
+# 开发环境配置 — 仅覆盖 application.yml 中默认值不适用于本地开发的部分
 spring:
   config:
     activate:
       on-profile: dev
-
-blog:
-  db:
-    host: mysql
-#    host: localhost
-    port: 3306
-    password: 123456
-  email:
-    username: 3388659470@qq.com
+  mail:
     password: leannxdtpvruchje
-  redis:
-#    host: 192.168.33.140
-    host: redis
-  oss:
-    endpoint: https://26eb63e68f7f9cdff6afc974471f6585.r2.cloudflarestorage.com
-    #    accessKey: fOubzeDQnZvTGnCEkRrs
-    accessKey: e6aac7d6150e05b303783954538a61f0
-    #    secretKey: jRbA6aWVnUetBNPQGmTnlonZy7JGnswqC43TTZEk
-    secretKey: 0206e05dd784abac63408b0d46d245b7034664879827f00856579a802a2f6c11
-    bucketsName: blog
-    image: image/
-    video: video/
+  data:
+    redis:
+      host: redis

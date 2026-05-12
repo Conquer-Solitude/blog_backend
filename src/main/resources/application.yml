@@ -1,36 +1,28 @@
 server:
-  port: 8084
+  port: ${SERVER_PORT:8084}
   servlet:
     session:
-      timeout: 600s # 单位为秒
+      timeout: 600s
 
 spring:
   profiles:
-    active: dev
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   servlet:
     multipart:
       max-file-size: 1000MB
       max-request-size: 1000MB
   datasource:
-    url: jdbc:mysql://${blog.db.host}:${blog.db.port}/blog?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: ${blog.db.password}
+    url: jdbc:mysql://${BLOG_DB_HOST:localhost}:${BLOG_DB_PORT:3306}/${BLOG_DB_NAME:blog}?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: ${BLOG_DB_USERNAME:root}
+    password: ${BLOG_DB_PASSWORD:123456}
     driver-class-name: com.mysql.cj.jdbc.Driver
   mail:
-    # 指定邮件服务器地址
     host: smtp.qq.com
-    # 登录账户
-    username: ${blog.email.username}
-    # 登录密码
-    password: ${blog.email.password}
-
-    # 端口
+    username: ${BLOG_EMAIL_USERNAME:3388659470@qq.com}
+    password: ${BLOG_EMAIL_PASSWORD:}
     port: 465
-    # 默认编码
     default-encoding: UTF-8
-    # 使用的协议
     protocol: smtps
-    # 其他的属性
     properties:
       "mail.smtp.connectiontimeout": 5000
       "mail.smtp.timeout": 3000
@@ -38,6 +30,12 @@ spring:
       "mail.smtp.auth": true
       "mail.smtp.starttls.enable": true
       "mail.smtp.starttls.required": true
+  data:
+    redis:
+      host: ${BLOG_REDIS_HOST:localhost}
+      port: ${BLOG_REDIS_PORT:6379}
+      timeout: 10000
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
@@ -50,34 +48,16 @@ mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.bilibili.myblogbackend.dto
 
-#redis:
-#  # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
-#  database: 0
-#  # redis服务器地址（默认为localhost）
-#  host: ${blog.redis.host}
-##  host: redis
-#  # redis端口（默认为6379）
-#  port: 6380
-#  # redis访问密码（默认为空）
-#  #password: pwd123
-#  # redis连接超时时间（单位毫秒）
-#  timeout: 10000
-#  # redis连接池配置
-#  pool:
-#    # 最大可用连接数（默认为8，负数表示无限）
-#    max-active: 8
-#    # 最大空闲连接数（默认为8，负数表示无限）
-#    max-idle: 8
-#    # 最小空闲连接数（默认为0，该值只有为正数才有用）
-#    min-idle: 0
-#    # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
-#    max-wait: -1
 minio:
   blog:
-    endpoint: ${blog.oss.endpoint}
-    accessKey: ${blog.oss.accessKey}
-    secretKey: ${blog.oss.secretKey}
-    bucketsName: ${blog.oss.bucketsName}
-    image: ${blog.oss.image}
-    video: ${blog.oss.video}
+    endpoint: ${BLOG_OSS_ENDPOINT:https://26eb63e68f7f9cdff6afc974471f6585.r2.cloudflarestorage.com}
+    accessKey: ${BLOG_OSS_ACCESSKEY:e6aac7d6150e05b303783954538a61f0}
+    secretKey: ${BLOG_OSS_SECRETKEY:0206e05dd784abac63408b0d46d245b7034664879827f00856579a802a2f6c11}
+    bucketsName: ${BLOG_OSS_BUCKETSNAME:blog}
+    image: ${BLOG_OSS_IMAGE:image/}
+    video: ${BLOG_OSS_VIDEO:video/}
 
+# CORS 允许的来源，生产部署时通过环境变量设置前端域名
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}

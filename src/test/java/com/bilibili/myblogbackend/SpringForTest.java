@@ -1,7 +1,9 @@
 package com.bilibili.myblogbackend;
 
+import com.bilibili.myblogbackend.util.EmailUtils;
 import com.bilibili.myblogbackend.util.oss.MinioUtils;
 import io.minio.errors.*;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,6 +31,8 @@ public class SpringForTest {
 
         @Autowired
         private MinioUtils minioUtils;
+        @Autowired
+        private EmailUtils emailUtils;
 
         /**
          * 测试上传图片到 R2
@@ -87,6 +91,11 @@ public class SpringForTest {
 }
 
 
+        @SneakyThrows
+        @Test
+        public void testEmail(){
+            emailUtils.sendMessage("459038176@qq.com");
+        }
 
 
 }
