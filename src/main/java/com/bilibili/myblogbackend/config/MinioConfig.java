@@ -1,16 +1,4 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.bilibili.myblogbackend.config.MinioConfig
- *  com.bilibili.myblogbackend.util.oss.MinioProperties
- *  io.minio.MinioClient
- *  okhttp3.ConnectionPool
- *  okhttp3.OkHttpClient
- *  okhttp3.OkHttpClient$Builder
- *  org.springframework.context.annotation.Bean
- *  org.springframework.context.annotation.Configuration
- */
+
 package com.bilibili.myblogbackend.config;
 
 import com.bilibili.myblogbackend.util.oss.MinioProperties;

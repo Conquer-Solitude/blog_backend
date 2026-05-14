@@ -62,7 +62,10 @@ extends OncePerRequestFilter {
     @SneakyThrows
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) {
         String uri = request.getRequestURI();
-        if (this.pathMatcher.match("/comment/video", uri) || this.pathMatcher.match("/message/submit", uri) || this.pathMatcher.match("/treehole/add", uri) || this.pathMatcher.match("/file/**", uri)) {
+        if (this.pathMatcher.match("/comment/video", uri)
+                || this.pathMatcher.match("/message/submit", uri)
+                || this.pathMatcher.match("/treehole/add", uri)
+                || this.pathMatcher.match("/file/**", uri)) {
             try {
                 this.vaildToken(request);
             } catch (NoLoginException e) {

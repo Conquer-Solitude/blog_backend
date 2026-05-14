@@ -26,6 +26,7 @@ import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import lombok.Generated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,6 +62,10 @@ public class LoginController {
         } else {
             return Result.success("验证码错误");
         }
+    }
+    @GetMapping({"/istotest"})
+    public Result logout() {
+        return Result.success("测试成功");
     }
 
     @Generated
