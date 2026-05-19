@@ -44,8 +44,10 @@ public class LoginController {
     @PostMapping({"/send"})
     public Result sendEmail(@RequestBody UserVO registerUser, HttpServletRequest request) {
         try {
+            System.out.println("发送邮件");
             String code = this.emailUtils.sendMessage(registerUser.getEmail());
             request.getSession().setAttribute(registerUser.getEmail(), code);
+            System.out.println("发送邮件成功");
         } catch (UnsupportedEncodingException | MessagingException var4) {
             throw new BaseException("邮件发送失败，请注意QQ邮件格式");
         }
