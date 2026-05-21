@@ -17,6 +17,7 @@ package com.bilibili.myblogbackend.controller;
 import com.bilibili.myblogbackend.common.Result;
 import com.bilibili.myblogbackend.service.ManageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BackgroundController {
 
     private final ManageService manageService;
+    @GetMapping("/all")
     public Result getBackground(){
         return Result.success(manageService.getAllBackground());
     }
