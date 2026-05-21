@@ -21,8 +21,5 @@ public record Manage(
         @TableField("self_introduce")
         String selfIntroduce
 ) {
-    // 无参构造，兼容MP反射实例化
-    public Manage() {
-        this(null, null, null, null);
-    }
+
 }
