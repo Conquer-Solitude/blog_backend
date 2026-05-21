@@ -12,7 +12,7 @@ public record Manage(
         @TableId
         Long id,
 
-        @TableField("typeId")
+        @TableField("type_id")
         Integer typeId,
 
         @TableField("image_name")
