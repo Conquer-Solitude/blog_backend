@@ -50,9 +50,9 @@ mybatis-plus:
 
 minio:
   blog:
-    endpoint: ${BLOG_OSS_ENDPOINT:https://26eb63e68f7f9cdff6afc974471f6585.r2.cloudflarestorage.com}
-    accessKey: ${BLOG_OSS_ACCESSKEY:e6aac7d6150e05b303783954538a61f0}
-    secretKey: ${BLOG_OSS_SECRETKEY:0206e05dd784abac63408b0d46d245b7034664879827f00856579a802a2f6c11}
+    endpoint: ${BLOG_OSS_ENDPOINT:}
+    accessKey: ${BLOG_OSS_ACCESSKEY:}
+    secretKey: ${BLOG_OSS_SECRETKEY:}
     bucketsName: ${BLOG_OSS_BUCKETSNAME:blog}
     image: ${BLOG_OSS_IMAGE:image/}
     video: ${BLOG_OSS_VIDEO:video/}

@@ -4,7 +4,7 @@ spring:
     activate:
       on-profile: dev
   mail:
-    password: leannxdtpvruchje
+    password: ${BLOG_EMAIL_PASSWORD:}
   data:
     redis:
       host: redis
