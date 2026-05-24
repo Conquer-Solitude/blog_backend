@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8084}
+  port: ${PORT:}
   servlet:
     session:
       timeout: 600s
@@ -13,8 +13,8 @@ spring:
       max-request-size: 1000MB
   datasource:
     url: jdbc:mysql://${BLOG_DB_HOST:localhost}:${BLOG_DB_PORT:3306}/${BLOG_DB_NAME:blog}?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    username: ${BLOG_DB_USERNAME:root}
-    password: ${BLOG_DB_PASSWORD:123456}
+    username: ${BLOG_DB_USERNAME:}
+    password: ${BLOG_DB_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
   mail:
     host: smtp.qq.com
