@@ -41,7 +41,12 @@ implements IArticleService {
     }
 
     public List<ArticleVO> getLatestArticle() {
-        return this.classConvertor.toArticleVO(this.getAll().subList(0, 2));
+        return this.classConvertor.toArticleVO(
+            this.lambdaQuery()
+                .orderByDesc(Article::getCreateTime)
+                .last("LIMIT 2")
+                .list()
+        );
     }
 
     public List<ArticleVO> getAllArticle() {
