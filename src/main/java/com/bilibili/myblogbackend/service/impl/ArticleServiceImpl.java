@@ -23,7 +23,7 @@ import com.bilibili.myblogbackend.dto.po.Article;
 import com.bilibili.myblogbackend.dto.vo.ArticleVO;
 import com.bilibili.myblogbackend.mapper.ArticleMapper;
 import com.bilibili.myblogbackend.service.IArticleService;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Generated;
 import org.springframework.stereotype.Service;
@@ -59,7 +59,7 @@ implements IArticleService {
 
     @Transactional
     public Integer addArticle(String fileName) {
-        Article build = Article.builder().cover(fileName).articleUrl("").createTime(LocalDate.now()).type(0).title("").introduce("").build();
+        Article build = Article.builder().cover(fileName).articleUrl("").createTime(LocalDateTime.now()).type(0).title("").introduce("").build();
         this.save(build);
         return build.getId();
     }

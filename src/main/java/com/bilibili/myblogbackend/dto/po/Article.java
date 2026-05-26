@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import lombok.Generated;
 
 @TableName(value="article")
@@ -14,7 +16,7 @@ implements Serializable {
     @TableId(value="id", type=IdType.AUTO)
     private Integer id;
     private String articleUrl;
-    private LocalDate createTime;
+    private LocalDateTime createTime;
     private Integer type;
     private String title;
     private String introduce;
@@ -39,7 +41,7 @@ implements Serializable {
     }
 
     @Generated
-    public LocalDate getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return this.createTime;
     }
 
@@ -76,7 +78,7 @@ implements Serializable {
     }
 
     @Generated
-    public Article setCreateTime(LocalDate createTime) {
+    public Article setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -137,8 +139,8 @@ implements Serializable {
         if (this$articleUrl == null ? other$articleUrl != null : !this$articleUrl.equals(other$articleUrl)) {
             return false;
         }
-        LocalDate this$createTime = this.getCreateTime();
-        LocalDate other$createTime = other.getCreateTime();
+        LocalDateTime this$createTime = this.getCreateTime();
+        LocalDateTime other$createTime = other.getCreateTime();
         if (this$createTime == null ? other$createTime != null : !((Object)this$createTime).equals(other$createTime)) {
             return false;
         }
@@ -172,7 +174,7 @@ implements Serializable {
         result = result * 59 + ($type == null ? 43 : ((Object)$type).hashCode());
         String $articleUrl = this.getArticleUrl();
         result = result * 59 + ($articleUrl == null ? 43 : $articleUrl.hashCode());
-        LocalDate $createTime = this.getCreateTime();
+        LocalDateTime $createTime = this.getCreateTime();
         result = result * 59 + ($createTime == null ? 43 : ((Object)$createTime).hashCode());
         String $title = this.getTitle();
         result = result * 59 + ($title == null ? 43 : $title.hashCode());
@@ -184,7 +186,7 @@ implements Serializable {
     }
 
     @Generated
-    public Article(Integer id, String articleUrl, LocalDate createTime, Integer type, String title, String introduce, String cover) {
+    public Article(Integer id, String articleUrl, LocalDateTime createTime, Integer type, String title, String introduce, String cover) {
         this.id = id;
         this.articleUrl = articleUrl;
         this.createTime = createTime;
@@ -197,7 +199,7 @@ implements Serializable {
     public static class ArticleBuilder {
         private Integer id;
         private String articleUrl;
-        private LocalDate createTime;
+        private LocalDateTime createTime;
         private Integer type;
         private String title;
         private String introduce;
@@ -216,7 +218,7 @@ implements Serializable {
             return this;
         }
 
-        public ArticleBuilder createTime(LocalDate createTime) {
+        public ArticleBuilder createTime(LocalDateTime createTime) {
             this.createTime = createTime;
             return this;
         }

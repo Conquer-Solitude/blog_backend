@@ -2,7 +2,7 @@
 package com.bilibili.myblogbackend.dto.vo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import lombok.Generated;
 
 public class ArticleVO
@@ -11,7 +11,7 @@ implements Serializable {
     private Integer id;
     private String articleUrl;
     private String title;
-    private LocalDate createTime;
+    private LocalDateTime createTime;
     private String introduce;
     private String cover;
 
@@ -35,7 +35,7 @@ implements Serializable {
     }
 
     @Generated
-    public LocalDate getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return this.createTime;
     }
 
@@ -68,7 +68,7 @@ implements Serializable {
     }
 
     @Generated
-    public ArticleVO setCreateTime(LocalDate createTime) {
+    public ArticleVO setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -117,8 +117,8 @@ implements Serializable {
         if (this$title == null ? other$title != null : !this$title.equals(other$title)) {
             return false;
         }
-        LocalDate this$createTime = this.getCreateTime();
-        LocalDate other$createTime = other.getCreateTime();
+        LocalDateTime this$createTime = this.getCreateTime();
+        LocalDateTime other$createTime = other.getCreateTime();
         if (this$createTime == null ? other$createTime != null : !((Object)this$createTime).equals(other$createTime)) {
             return false;
         }
@@ -147,7 +147,7 @@ implements Serializable {
         result = result * 59 + ($articleUrl == null ? 43 : $articleUrl.hashCode());
         String $title = this.getTitle();
         result = result * 59 + ($title == null ? 43 : $title.hashCode());
-        LocalDate $createTime = this.getCreateTime();
+        LocalDateTime $createTime = this.getCreateTime();
         result = result * 59 + ($createTime == null ? 43 : ((Object)$createTime).hashCode());
         String $introduce = this.getIntroduce();
         result = result * 59 + ($introduce == null ? 43 : $introduce.hashCode());
