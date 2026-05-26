@@ -30,8 +30,8 @@ public class MinioUtils {
     private final MinioProperties minioProperties;
     private final ThreadPoolTaskExecutor threadPool;
 
-    // 分片大小 5MB
-    private static final long CHUNK_SIZE = 5 * 1024 * 1024;
+    // 分片大小 10MB
+    private static final long CHUNK_SIZE =2* 5 * 1024 * 1024;
     // 上传超时时间（分钟）
     private static final long UPLOAD_TIMEOUT_MINUTES = 30;
 
