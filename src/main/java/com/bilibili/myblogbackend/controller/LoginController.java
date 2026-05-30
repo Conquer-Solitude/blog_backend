@@ -25,6 +25,8 @@ import com.bilibili.myblogbackend.util.EmailUtils;
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
+
 import lombok.Generated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,9 +67,9 @@ public class LoginController {
             return Result.success("验证码错误");
         }
     }
-    @GetMapping({"/istotest"})
+    @GetMapping({"/keepalive"})
     public Result logout() {
-        return Result.success("测试成功");
+        return Result.success("现在的时间是:"+ LocalDateTime.now());
     }
 
     @Generated
