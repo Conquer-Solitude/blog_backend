@@ -31,7 +31,9 @@ public class ManageService extends ServiceImpl<ManageMapper, Manage> {
         String fileName = LocalDateTime.now().toString().replace(":", "-") + suffix;
         minioUtils.uploadImage(fileName, file);
 
-        Manage manage = new Manage(null, 1, fileName, null);
+        Manage manage = new Manage();
+        manage.setTypeId(1);
+        manage.setImageName(fileName);
         this.save(manage);
 
         return fileName;

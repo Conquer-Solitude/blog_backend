@@ -3,23 +3,25 @@ package com.bilibili.myblogbackend.dto.po;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 /**
- * 图片管理表实体 Record
+ * 图片管理表实体
  */
+@Data
 @TableName("manage")
-public record Manage(
-        @TableId
-        Long id,
+public class Manage {
 
-        @TableField("type_id")
-        Integer typeId,
+    @TableId
+    private Long id;
 
-        @TableField("image_name")
-        String imageName,
+    @TableField("type_id")
+    private Integer typeId;
 
-        @TableField("self_introduce")
-        String selfIntroduce
-) {
+    @TableField("image_name")
+    private String imageName;
+
+    @TableField("self_introduce")
+    private String selfIntroduce;
 
 }
