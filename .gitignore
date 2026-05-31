@@ -116,3 +116,6 @@ static/uploads/
 test-output/
 surefire-reports/
 failsafe-reports/
+
+#other
+.sisyphus
