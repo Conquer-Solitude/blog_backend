@@ -1,7 +1,6 @@
 package com.bilibili.myblogbackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bilibili.myblogbackend.dto.po.Manage;
 import com.bilibili.myblogbackend.mapper.ManageMapper;
@@ -32,9 +31,8 @@ public class ManageService extends ServiceImpl<ManageMapper, Manage> {
         String fileName = LocalDateTime.now().toString().replace(":", "-") + suffix;
         minioUtils.uploadImage(fileName, file);
 
-        UpdateWrapper<Manage> wrapper = new UpdateWrapper<>();
-        wrapper.eq("id", 1).set("image_name", fileName);
-        this.update(wrapper);
+        Manage manage = new Manage(null, 1, fileName, null);
+        this.save(manage);
 
         return fileName;
     }
